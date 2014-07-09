@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TestED/BehaviorEditDistance.cpp"
-            timestampString = "426387772.754106"
+            timestampString = "426548382.85312"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "85"
-            endingLineNumber = "85">
+            startingLineNumber = "140"
+            endingLineNumber = "140">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -24,12 +24,28 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TestED/BehaviorEditDistance.cpp"
-            timestampString = "426387772.754106"
+            timestampString = "426548382.85312"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "128"
-            endingLineNumber = "128"
-            landmarkName = "behaviourEditDistance(BehaviorObjVector &amp;s1,BehaviorObjVector &amp;s2)"
+            startingLineNumber = "183"
+            endingLineNumber = "183"
+            landmarkName = "behaviourEditDistance(list&lt;BehaviorObj&gt; &amp;src1,list&lt;BehaviorObj&gt; &amp;src2, BehaviorObjVector &amp;s1,BehaviorObjVector &amp;s2)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TestED/main.cpp"
+            timestampString = "426546468.655029"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "50"
+            endingLineNumber = "50"
+            landmarkName = "main(int argc, const char * argv[])"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

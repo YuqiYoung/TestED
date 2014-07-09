@@ -18,18 +18,12 @@
 #include "BehaviorObj.h"
 #include <vector>
 #include <list>
-class EditDistance
-{
-private:
-    list<BehaviorObj> s1;
-    list<BehaviorObj> s2;
-public:
-    float targetNameEditDistance(string &s1, string &s2);
-    float behaviourEditDistance(BehaviorObjVector &s1,BehaviorObjVector &s2);
-    float minChoice(int &opt, float delWeight, float insertWeight, float subWeight);
-    void generateInsertSpaceList(list<BehaviorObj> &s1,list<BehaviorObj> &s2,BehaviorObj &obj1,BehaviorObj &obj2, int opt);
-    void applyChoice(BehaviorObj &obj1,BehaviorObj &obj2, int opt);//decide where to insert space
-    void printD(vector<vector<float>> vec);//print a 2d matrix
-};
+
+void printS1S2(list<BehaviorObj> src1,list<BehaviorObj> src2);
+float targetNameEditDistance(string &s1, string &s2);
+float behaviourEditDistance(list<BehaviorObj> &src1,list<BehaviorObj> &src2, BehaviorObjVector &s1,BehaviorObjVector &s2);
+float minChoice(int &opt, float delWeight, float insertWeight, float subWeight);
+void generateInsertSpaceList(list<BehaviorObj> &s1,list<BehaviorObj> &s2,BehaviorObj &obj1,BehaviorObj &obj2, int opt);
+void printD(vector<vector<float>> vec);//print a 2d matrix
 
 #endif /* defined(__TestED__BehaviorEditDistance__) */

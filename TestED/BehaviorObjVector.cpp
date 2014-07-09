@@ -18,11 +18,13 @@ BehaviorObjVector::BehaviorObjVector()
 
 BehaviorObj& BehaviorObjVector::getIndex(int index)
 {
-    if(0<=index&& _behaviorVector.size()>=index)
+    if(0<=index&& _behaviorVector.size()>index)
         return _behaviorVector[index];
     else
     {
         cout<<"BehaviorObjVector::getIndex out of bound"<<endl;
+        cout<<index<<endl;
+        cout<<_behaviorVector.size();
         exit(EXIT_FAILURE);
     }
 }
@@ -71,10 +73,7 @@ void BehaviorObjVector::printInsertSpaceString()
 {
     for(vector<BehaviorObj>::iterator i=_behaviorVector.begin(); i!=_behaviorVector.end();i++)
     {
-        if(i->getEditOperation()==APPENDSPACE)
-            cout<<i->getBehaviorName()+" ";
-        else
-            cout<<i->getBehaviorName();
+        cout<<i->getBehaviorName();
     }
     cout<<endl;
     

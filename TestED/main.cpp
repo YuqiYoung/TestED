@@ -15,25 +15,29 @@ using namespace std;
 int main(int argc, const char * argv[])
 {
 
-    BehaviorObj temp=BehaviorObj("R","a");
-    BehaviorObj temp0=BehaviorObj("R","b");
-    BehaviorObj temp1=BehaviorObj("R","c");
-    BehaviorObj temp2=BehaviorObj("W","d");
-    BehaviorObj temp3=BehaviorObj("W","e");
-    
+    BehaviorObj r=BehaviorObj("R","a");
+    BehaviorObj r0=BehaviorObj("R","b");
+    BehaviorObj r1=BehaviorObj("R","c");
+    BehaviorObj w0=BehaviorObj("W","d");
+    BehaviorObj w1=BehaviorObj("W","e");
+
     BehaviorObjVector myVector;
-    myVector.addBehaviorObj(temp);
-    myVector.addBehaviorObj(temp0);
-    myVector.addBehaviorObj(temp1);
+    //myVector.addBehaviorObj(r);
+    myVector.addBehaviorObj(w0);
+    myVector.addBehaviorObj(w1);
+    myVector.addBehaviorObj(r1);
+    //myVector.addBehaviorObj(w0);
+    //myVector.addBehaviorObj(r0);
+    //myVector.addBehaviorObj(r0);
     myVector.printInsertSpaceString();
     
     BehaviorObjVector myVector2;
-    myVector2.addBehaviorObj(temp);
-    myVector2.addBehaviorObj(temp2);
-    myVector2.addBehaviorObj(temp2);
-    myVector2.addBehaviorObj(temp);
-    myVector2.addBehaviorObj(temp2);
-    myVector2.addBehaviorObj(temp);
+    myVector2.addBehaviorObj(r);
+//    myVector2.addBehaviorObj(r1);
+//    myVector2.addBehaviorObj(r1);
+//    myVector.addBehaviorObj(w0);
+//    myVector.addBehaviorObj(w0);
+//    myVector2.addBehaviorObj(r1);
     myVector2.printInsertSpaceString();
     
     /*vector<string> t=myVector.getBehaviorVector();
@@ -41,12 +45,12 @@ int main(int argc, const char * argv[])
     
     cout<<(float)myVector2.size()<<endl;
     cout<<edit_distance(t,t2);*/
-
-    behaviourEditDistance(myVector2,myVector);
+    list<BehaviorObj> s1;
+    list<BehaviorObj> s2;
+    behaviourEditDistance(s1,s2,myVector,myVector2);
     
-    myVector2.printInsertSpaceString();
-    myVector.printInsertSpaceString();
-    
+    printS1S2(s1,s2);
+    //myED.printS1S2();
     //myVector2.printInfo();
     /*cout<< myVector2.getIndex(0).getEditOperation();
     myVector2.getIndex(0).setEditOperation(2);
