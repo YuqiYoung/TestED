@@ -81,38 +81,40 @@ float minChoice(int &opt, float delWeight, float insertWeight, float subWeight)
     if(opt==DELETE)
     {
         obj1.setEditOperation(DELETE);
-        s1.push_back(obj1);
+        s1.push_front(obj1);
         BehaviorObj temp=BehaviorObj("_", " ");
-        s2.push_back(temp);
+        s2.push_front(temp);
         cout<<"s1 delete "+obj1.getBehaviorName()<<endl;
         
     }
     else if(opt==INSERT)
     {
         
-        BehaviorObj temp=BehaviorObj("*", " ");
-        s1.push_back(temp);
+        BehaviorObj temp=BehaviorObj("_", " ");
+        s1.push_front(temp);
         obj2.setEditOperation(DELETE);
-        s2.push_back(obj2);
+        s2.push_front(obj2);
         //cout<<"s1 insert\"_\" s2 delete"+obj2.getBehaviorName()<<endl;
-        cout<<"s1 insert "+ obj2.getBehaviorName();
+        cout<<"s1 insert "+ obj2.getBehaviorName()<<endl;
 
     }
     else if(opt==KEEP)
     {
         obj1.setEditOperation(opt);
-        s1.push_back(obj1);
+        s1.push_front(obj1);
         obj2.setEditOperation(opt);
-        s2.push_back(obj2);
-        //cout<<"s1 keep "+ obj1.getBehaviorName()+" s2 keep "+obj2.getBehaviorName()<<endl;
-        cout<<"s1 keep "+ obj1.getBehaviorName()<<endl;
+        s2.push_front(obj2);
+        cout<<"s1 keep "+ obj1.getBehaviorName()+" s2 keep "+obj2.getBehaviorName()<<endl;
     }
     else if(opt==SUBSITUDE)
     {
         obj1.setEditOperation(opt);
-        s1.push_back(obj1);
+        BehaviorObj temp1=BehaviorObj("_", " ");
+        s1.push_front(temp1);
+        s1.push_front(obj1);
         obj2.setEditOperation(opt);
-        s2.push_back(obj2);
+        s2.push_front(obj2);
+        s2.push_front(temp1);
         cout<<"s1 change "+ obj1.getBehaviorName()+" to "+obj2.getBehaviorName()<<endl;
     }//keep or sub
 }
@@ -147,21 +149,16 @@ float behaviourEditDistance(list<BehaviorObj> &src1,list<BehaviorObj> &src2, Beh
     d[0][0] = 0;
     for(unsigned int i = 1; i <= len1; ++i) d[i][0] = i;
     for(unsigned int i = 1; i <= len2; ++i) d[0][i] = i;
-    
+
     for(unsigned int i = 1; i <= len1; ++i)
     {
         //find the optimal edit solution
-        int minObj=d[i][0];
-        int optArray[len2];//use to save the optimal edit solution
-        int index_i=i;
-        int index_j=0;
         for(unsigned int j = 1; j <= len2; ++j)
         {
             
             if(s1.getIndex(i-1).getBehaviorName() == s2.getIndex(j-1).getBehaviorName())
             {
                 d[i][j]=d[i-1][j-1];
-                optArray[j]=KEEP;
             }
             else
             {
@@ -172,21 +169,44 @@ float behaviourEditDistance(list<BehaviorObj> &src1,list<BehaviorObj> &src2, Beh
                 float len2=tar2.size();
                 float weight=ed/(len1+len2);
                 d[i][j]=minChoice(optArray[j], d[i - 1][j] + 1, d[i][j - 1] + 1, d[i - 1][j - 1] + weight);*/
-                d[i][j]=minChoice(optArray[j], d[i - 1][j] + 1, d[i][j - 1] + 1, d[i - 1][j - 1] + 1);
-                //d[i][j] = std::min( std::min(d[i - 1][j] + 1,d[i][j - 1] + 1),d[i - 1][j - 1] + 1 );
-            }
-            if(d[i][j]<minObj)
-            {
-                minObj=d[i][j];
-                index_i=i-1;
-                index_j=j-1;
+                //d[i][j]=minChoice(optArray[j], d[i - 1][j] + 1, d[i][j - 1] + 1, d[i - 1][j - 1] + 1);
+                d[i][j] = std::min( std::min(d[i - 1][j] + 1,d[i][j - 1] + 1),d[i - 1][j - 1] + 1 );
             }
         }
-        generateInsertSpaceList(src1, src2, s1.getIndex(index_i), s2.getIndex(index_j), optArray[index_j+1]);
-        
     }
-
-    printD(d);
+    
+    unsigned int index_i=(unsigned int)len1;
+    unsigned int index_j=(unsigned int)len2;
+    while (!(index_i ==0&&index_j ==0))
+    {
+        cout<<index_i;
+        cout<<" ";
+        cout<<index_j<<endl;
+        unsigned int min=d[index_i-1][index_j-1];
+        unsigned int min_i=index_i-1;
+        unsigned int min_j=index_j-1;
+        int choice;
+        if(d[index_i-1][index_j-1]==d[index_i][index_j])
+            choice=KEEP;
+        else
+            choice=SUBSITUDE;
+        if(d[index_i-1][index_j]<min)
+        {
+            min_i=index_i-1;
+            min_j=index_j;
+            choice=DELETE;
+        }
+        if(d[index_i][index_j-1]<min)
+        {
+            min_i=index_i;
+            min_j=index_j-1;
+            choice=INSERT;
+        }
+        generateInsertSpaceList(src1, src2, s1.getIndex(index_i-1), s2.getIndex(index_j-1), choice);
+        index_i=min_i;
+        index_j=min_j;
+    }
+        printD(d);
             /*d[i][j] = std::min( std::min(d[i - 1][j] + 1,d[i][j - 1] + 1),
                                d[i - 1][j - 1] + (s1[i-1] == s2[j-1] ? 0 : 1) );*/
     return d[len1][len2];

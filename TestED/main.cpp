@@ -22,22 +22,22 @@ int main(int argc, const char * argv[])
     BehaviorObj w1=BehaviorObj("W","e");
 
     BehaviorObjVector myVector;
-    //myVector.addBehaviorObj(r);
+    myVector.addBehaviorObj(r);
     myVector.addBehaviorObj(w0);
     myVector.addBehaviorObj(w1);
     myVector.addBehaviorObj(r1);
-    //myVector.addBehaviorObj(w0);
-    //myVector.addBehaviorObj(r0);
-    //myVector.addBehaviorObj(r0);
+    myVector.addBehaviorObj(w0);
+    myVector.addBehaviorObj(r0);
+    myVector.addBehaviorObj(r0);
     myVector.printInsertSpaceString();
     
     BehaviorObjVector myVector2;
     myVector2.addBehaviorObj(r);
-//    myVector2.addBehaviorObj(r1);
-//    myVector2.addBehaviorObj(r1);
-//    myVector.addBehaviorObj(w0);
-//    myVector.addBehaviorObj(w0);
-//    myVector2.addBehaviorObj(r1);
+    myVector2.addBehaviorObj(r1);
+    myVector2.addBehaviorObj(r1);
+    myVector2.addBehaviorObj(w0);
+    myVector2.addBehaviorObj(w0);
+    myVector2.addBehaviorObj(r1);
     myVector2.printInsertSpaceString();
     
     /*vector<string> t=myVector.getBehaviorVector();
