@@ -13,8 +13,6 @@ BehaviorObj::BehaviorObj(const string bn, const string tFN)
         _targetFileName=tFN;
 }
     
-//BehaviorObj::~BehaviorObj();
-    
 string BehaviorObj::getBehaviorName()
 {
         return _behaviorName;
@@ -25,15 +23,6 @@ string BehaviorObj::getTargetFileName()
         return _targetFileName;
 }
 
-int BehaviorObj::getEditOperation()
-{
-    return _editOperation;
-}
-
-void BehaviorObj::setEditOperation(int opn)
-{
-    _editOperation=opn;
-}
 
 void BehaviorObj::printInfo()
 {

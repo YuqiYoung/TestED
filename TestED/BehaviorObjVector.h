@@ -24,7 +24,7 @@ public:
     vector<string> getBehaviorVector();
     vector<string> getTargetFileNameVector();
     void printInsertSpaceString();
-    void printDetail();//behavior+targetname+opt
+    void printDetail();//behavior+targetname
     void printInfo();//behavior+targetname
 };
 

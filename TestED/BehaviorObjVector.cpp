@@ -85,7 +85,6 @@ void BehaviorObjVector::printDetail()
     {
         cout<<i->getBehaviorName();
         cout<<i->getTargetFileName();
-        cout<<i->getEditOperation();
     }
     cout<<endl;
 }

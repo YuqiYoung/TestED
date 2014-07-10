@@ -80,7 +80,6 @@ float minChoice(int &opt, float delWeight, float insertWeight, float subWeight)
 {
     if(opt==DELETE)
     {
-        obj1.setEditOperation(DELETE);
         s1.push_front(obj1);
         BehaviorObj temp=BehaviorObj("_", " ");
         s2.push_front(temp);
@@ -90,9 +89,8 @@ float minChoice(int &opt, float delWeight, float insertWeight, float subWeight)
     else if(opt==INSERT)
     {
         
-        BehaviorObj temp=BehaviorObj("_", " ");
+        BehaviorObj temp=BehaviorObj("_                                             ‘                     ", " ");
         s1.push_front(temp);
-        obj2.setEditOperation(DELETE);
         s2.push_front(obj2);
         //cout<<"s1 insert\"_\" s2 delete"+obj2.getBehaviorName()<<endl;
         cout<<"s1 insert "+ obj2.getBehaviorName()<<endl;
@@ -100,44 +98,20 @@ float minChoice(int &opt, float delWeight, float insertWeight, float subWeight)
     }
     else if(opt==KEEP)
     {
-        obj1.setEditOperation(opt);
         s1.push_front(obj1);
-        obj2.setEditOperation(opt);
         s2.push_front(obj2);
         cout<<"s1 keep "+ obj1.getBehaviorName()+" s2 keep "+obj2.getBehaviorName()<<endl;
     }
     else if(opt==SUBSITUDE)
     {
-        obj1.setEditOperation(opt);
         BehaviorObj temp1=BehaviorObj("_", " ");
         s1.push_front(temp1);
         s1.push_front(obj1);
-        obj2.setEditOperation(opt);
         s2.push_front(obj2);
         s2.push_front(temp1);
         cout<<"s1 change "+ obj1.getBehaviorName()+" to "+obj2.getBehaviorName()<<endl;
     }//keep or sub
 }
-/*void applyChoice(BehaviorObj &obj1,BehaviorObj &obj2, int opt)
-{
-    if(opt==DELETE)
-    {
-        obj1.setEditOperation(DELETE);
-        obj2.setEditOperation(APPENDSPACE);
-    
-    }
-    else if(opt==APPENDSPACE)
-    {
-        obj1.setEditOperation(APPENDSPACE);
-        obj2.setEditOperation(DELETE);
-    }
-    else
-    {
-        obj1.setEditOperation(opt);
-        obj2.setEditOperation(opt);
-    }//keep or sub
-}*/
-
 
 float behaviourEditDistance(list<BehaviorObj> &src1,list<BehaviorObj> &src2, BehaviorObjVector &s1,BehaviorObjVector &s2)
 {

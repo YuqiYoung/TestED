@@ -16,7 +16,6 @@ class BehaviorObj
 private:
     string _behaviorName;//some operation names such as write, read and so on
     string _targetFileName;//the target file name of this operation
-    int _editOperation=-1;/*DELETE  0; KEEP    1; INSERT  2; SUBSITUDE   3; APPENDSPACE 4*/
     
 public:
     BehaviorObj(const string bn, const string tFN);
@@ -25,8 +24,6 @@ public:
     
     string getBehaviorName();
     string getTargetFileName();
-    int getEditOperation();
-    void setEditOperation(int opn);
     void printInfo();
 };
 #endif /* defined(__TestED__BehaviorObj__) */

@@ -26,4 +26,5 @@ float minChoice(int &opt, float delWeight, float insertWeight, float subWeight);
 void generateInsertSpaceList(list<BehaviorObj> &s1,list<BehaviorObj> &s2,BehaviorObj &obj1,BehaviorObj &obj2, int opt);
 void printD(vector<vector<float>> vec);//print a 2d matrix
 
+
 #endif /* defined(__TestED__BehaviorEditDistance__) */
