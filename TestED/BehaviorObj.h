@@ -19,12 +19,9 @@ private:
     
 public:
     BehaviorObj(const string bn, const string tFN);
-    
-    //~BehaviorObj();
-    
     string getBehaviorName();
     string getTargetFileName();
-    void printInfo();
+    void printInfo();//_behaviorName+_targetFileName
 };
 #endif /* defined(__TestED__BehaviorObj__) */
 

@@ -22,9 +22,7 @@ BehaviorObj& BehaviorObjVector::getIndex(int index)
         return _behaviorVector[index];
     else
     {
-        cout<<"BehaviorObjVector::getIndex out of bound"<<endl;
-        cout<<index<<endl;
-        cout<<_behaviorVector.size();
+        cerr<<"BehaviorObjVector::getIndex out of bound"<<index<<_behaviorVector.size()<<endl;
         exit(EXIT_FAILURE);
     }
 }
@@ -60,23 +58,13 @@ void BehaviorObjVector::addBehaviorObj(BehaviorObj bo)
     _behaviorVector.push_back(bo);
 }
 
-void BehaviorObjVector::printInfo()
-{
-    for(vector<BehaviorObj>::iterator i=_behaviorVector.begin(); i!=_behaviorVector.end();i++)
-    {
-        i->printInfo();
-    }
-    cout<<endl;
-}
-
-void BehaviorObjVector::printInsertSpaceString()
+void BehaviorObjVector::printBasicInfo()
 {
     for(vector<BehaviorObj>::iterator i=_behaviorVector.begin(); i!=_behaviorVector.end();i++)
     {
         cout<<i->getBehaviorName();
     }
     cout<<endl;
-    
 }
 
 void BehaviorObjVector::printDetail()

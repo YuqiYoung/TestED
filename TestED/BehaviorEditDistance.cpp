@@ -83,7 +83,7 @@ float minChoice(int &opt, float delWeight, float insertWeight, float subWeight)
         s1.push_front(obj1);
         BehaviorObj temp=BehaviorObj("_", " ");
         s2.push_front(temp);
-        cout<<"s1 delete "+obj1.getBehaviorName()<<endl;
+        if(PRINTOUT) cout<<"s1 delete "+obj1.getBehaviorName()<<endl;
         
     }
     else if(opt==INSERT)
@@ -93,14 +93,14 @@ float minChoice(int &opt, float delWeight, float insertWeight, float subWeight)
         s1.push_front(temp);
         s2.push_front(obj2);
         //cout<<"s1 insert\"_\" s2 delete"+obj2.getBehaviorName()<<endl;
-        cout<<"s1 insert "+ obj2.getBehaviorName()<<endl;
+        if(PRINTOUT) cout<<"s1 insert "+ obj2.getBehaviorName()<<endl;
 
     }
     else if(opt==KEEP)
     {
         s1.push_front(obj1);
         s2.push_front(obj2);
-        cout<<"s1 keep "+ obj1.getBehaviorName()+" s2 keep "+obj2.getBehaviorName()<<endl;
+        if(PRINTOUT) cout<<"s1 keep "+ obj1.getBehaviorName()+" s2 keep "+obj2.getBehaviorName()<<endl;
     }
     else if(opt==SUBSITUDE)
     {
@@ -109,7 +109,7 @@ float minChoice(int &opt, float delWeight, float insertWeight, float subWeight)
         s1.push_front(obj1);
         s2.push_front(obj2);
         s2.push_front(temp1);
-        cout<<"s1 change "+ obj1.getBehaviorName()+" to "+obj2.getBehaviorName()<<endl;
+        if(PRINTOUT) cout<<"s1 change "+ obj1.getBehaviorName()+" to "+obj2.getBehaviorName()<<endl;
     }//keep or sub
 }
 
@@ -153,9 +153,12 @@ float behaviourEditDistance(list<BehaviorObj> &src1,list<BehaviorObj> &src2, Beh
     unsigned int index_j=(unsigned int)len2;
     while (!(index_i ==0&&index_j ==0))
     {
-        cout<<index_i;
-        cout<<" ";
-        cout<<index_j<<endl;
+        if(PRINTOUT)
+        {
+            cout<<index_i;
+            cout<<" ";
+            cout<<index_j<<endl;
+        }
         unsigned int min=d[index_i-1][index_j-1];
         unsigned int min_i=index_i-1;
         unsigned int min_j=index_j-1;

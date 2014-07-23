@@ -23,9 +23,8 @@ public:
     void addBehaviorObj(BehaviorObj bo);
     vector<string> getBehaviorVector();
     vector<string> getTargetFileNameVector();
-    void printInsertSpaceString();
     void printDetail();//behavior+targetname
-    void printInfo();//behavior+targetname
+    void printBasicInfo();//behavior
 };
 
 #endif /* defined(__TestED__BehaviorObjVector__) */

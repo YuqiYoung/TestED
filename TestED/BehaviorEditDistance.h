@@ -8,11 +8,11 @@
 
 #ifndef __TestED__BehaviorEditDistance__
 #define __TestED__BehaviorEditDistance__
+#define PRINTOUT 1 //1: printout Details; 0: printout nothing
 #define DELETE  0
 #define KEEP    1
 #define INSERT  2
 #define SUBSITUDE   3
-#define APPENDSPACE 4
 #include <iostream>
 #include "BehaviorObjVector.h"
 #include "BehaviorObj.h"
