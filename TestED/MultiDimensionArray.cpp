@@ -7,7 +7,8 @@
 //
 
 #include "MultiDimensionArray.h"
-unsigned long calLenProdArray(vector<unsigned long> &lenProdArray, vector<unsigned long> &lenArray, unsigned long n)
+
+long calLenProdArray(vector<long> &lenProdArray, const vector<long> &lenArray, long n)
 {
     if(n==0)
     {
@@ -18,9 +19,9 @@ unsigned long calLenProdArray(vector<unsigned long> &lenProdArray, vector<unsign
     return lenProdArray[n];
 }
 
-unsigned long getLocation(vector<unsigned long> &lenProdArray, vector<unsigned long>  &indexArray)
+long getLocation(const vector<long> lenProdArray, const vector<long> indexArray)
 {
-    unsigned long loc=0;
+    long loc=0;
     for(unsigned int i=0;i<indexArray.size();i++)
     {
         loc=loc+indexArray[i]*lenProdArray[i];
@@ -29,9 +30,9 @@ unsigned long getLocation(vector<unsigned long> &lenProdArray, vector<unsigned l
 }
 
 
-void getIndexArray(const vector<unsigned long> lenProdArray,vector<unsigned long> &indexArray,const unsigned long loc)//lenProdArray['s length: n+1,
+void getIndexArray(const vector<long> lenProdArray,vector<long> &indexArray,const long loc)//lenProdArray['s length: n+1,
 {
-    unsigned long max_n= indexArray.size();
+    long max_n= indexArray.size();
     indexArray[0]=loc%lenProdArray[1]/lenProdArray[0];
     for(unsigned int i=1; i<max_n; i++)
     {
@@ -45,16 +46,16 @@ void getIndexArray(const vector<unsigned long> lenProdArray,vector<unsigned long
     }
 }
 
-void combination(unsigned long n, unsigned long start, unsigned long end, vector< vector<unsigned long> > &preStepVec, const vector<unsigned long> indexArray)
+void combination(long n, long start, long end, vector< vector<long> > &preStepVec, const vector<long> indexArray)
 {
     if(n==0)
         return;
-    unsigned long mid=(start+end)/2;
-    for(unsigned long i=start; i <= mid; i++)
+    long mid=(start+end)/2;
+    for(long i=start; i <= mid; i++)
     {
             preStepVec[i][n-1]= indexArray[n-1] - 1; //[i-1]
     }
-    for(unsigned long i=mid+1; i <= end; i++)
+    for(long i=mid+1; i <= end; i++)
     {
         preStepVec[i][n-1]= indexArray[n-1]; //[i]
     }
@@ -62,15 +63,15 @@ void combination(unsigned long n, unsigned long start, unsigned long end, vector
     combination(n-1, mid+1, end, preStepVec, indexArray);
 }
 
-void getPreviousStep(vector< vector<unsigned long> > &preStepVec, const vector<unsigned long> indexArray)
+void getPreviousStep(vector< vector<long> > &preStepVec, const vector<long> indexArray)
 {
-    unsigned long length= (unsigned long)pow(2,indexArray.size());
+    long length= (long)pow(2,indexArray.size());
     combination(indexArray.size(), 0, length-1, preStepVec, indexArray);
-    //vector< vector<unsigned long> > preStepVec(indexArray.size(), vector<unsigned long>(length));
+    //vector< vector<long> > preStepVec(indexArray.size(), vector<long>(length));
     //return preStepVec;
 }
 
-int getCostValue(const vector<unsigned long> original, const vector<unsigned long> preStep)
+int getCostValue(const vector<long> original, const vector<long> preStep)
 {
     int cost=0;
     for(int i=0;i<original.size();i++)
@@ -79,4 +80,36 @@ int getCostValue(const vector<unsigned long> original, const vector<unsigned lon
             cost++;
     }
     return cost;
+}
+
+long MinPreStep(const vector<long> dMatrix, const vector< vector<long> > &preStepVec,const vector<long> lenProdArray)
+{
+    //vector<long> current= preStepVec[preStepVec.size()-1];
+    long minLoc= getLocation(lenProdArray, preStepVec[0]);
+    for(long i=1; i< preStepVec.size()-1; i++)
+    {
+        long loc= getLocation(lenProdArray, preStepVec[i]);
+        if(dMatrix[loc] < dMatrix[minLoc])
+        {
+            minLoc=loc;
+        }
+    }
+    return minLoc;
+}
+
+void generateVisitOrder(const vector<long> lenArray, vector< vector<long> > &visitOrder, long dimension, long start, long end)
+{
+    long lenPartion=(end-start+1)/lenArray[dimension];
+    if(dimension==0)
+    {
+        return;
+    }
+    for(long i=0; i<lenArray[dimension]; i++)
+    {
+        long newStart=start+i*lenPartion;
+        long newEnd=newStart+lenPartion-1;
+        for(long j=newStart; j<=newEnd; j++)
+            visitOrder[j][lenArray.size()-1-dimension]=i;
+        generateVisitOrder(lenArray, visitOrder, dimension-1, newStart, newEnd);
+    }
 }
