@@ -18,11 +18,11 @@ BehaviorObjVector::BehaviorObjVector()
 
 BehaviorObj& BehaviorObjVector::getIndex(int index)
 {
-    if(0<=index&& _behaviorVector.size()>index)
+    if(0<=index && _behaviorVector.size()>index)
         return _behaviorVector[index];
     else
     {
-        cerr<<"BehaviorObjVector::getIndex out of bound"<<index<<_behaviorVector.size()<<endl;
+        cerr<<"BehaviorObjVector::getIndex out of bound\nDetails: try to visit "<<index<<" within the boundary size "<<_behaviorVector.size()<<endl;
         exit(EXIT_FAILURE);
     }
 }

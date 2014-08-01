@@ -10,11 +10,13 @@
 		049109A3197ECAED00DA0C3E /* MultiDimensionArray.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 049109A1197ECAED00DA0C3E /* MultiDimensionArray.cpp */; };
 		04C35A7C196F41DC009AACB9 /* MyEditDistance.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 04C35A7A196F41DC009AACB9 /* MyEditDistance.cpp */; };
 		04C35A82196F4672009AACB9 /* EditDist.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 04C35A80196F4672009AACB9 /* EditDist.cpp */; };
+		04CB7E9B1984736000948A75 /* MultiStringEditDistance.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 04CB7E991984736000948A75 /* MultiStringEditDistance.cpp */; };
 		04D8B5D919673E260059CE50 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 04D8B5D819673E260059CE50 /* main.cpp */; };
 		04D8B5DB19673E260059CE50 /* TestED.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 04D8B5DA19673E260059CE50 /* TestED.1 */; };
 		04D8B5E319673E490059CE50 /* BehaviorObj.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 04D8B5E119673E490059CE50 /* BehaviorObj.cpp */; };
 		04D8B5E6196741060059CE50 /* BehaviorObjVector.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 04D8B5E4196741060059CE50 /* BehaviorObjVector.cpp */; };
 		04D8B5EF196752720059CE50 /* BehaviorEditDistance.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 04D8B5ED196752720059CE50 /* BehaviorEditDistance.cpp */; };
+		04E06CB0198B3E2E00BA68B4 /* EditDistanceStatus.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 04E06CAE198B3E2E00BA68B4 /* EditDistanceStatus.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -37,6 +39,8 @@
 		04C35A7B196F41DC009AACB9 /* MyEditDistance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyEditDistance.h; sourceTree = "<group>"; };
 		04C35A80196F4672009AACB9 /* EditDist.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = EditDist.cpp; sourceTree = "<group>"; };
 		04C35A81196F4672009AACB9 /* EditDist.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditDist.h; sourceTree = "<group>"; };
+		04CB7E991984736000948A75 /* MultiStringEditDistance.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MultiStringEditDistance.cpp; sourceTree = "<group>"; };
+		04CB7E9A1984736000948A75 /* MultiStringEditDistance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MultiStringEditDistance.h; sourceTree = "<group>"; };
 		04D8B5D519673E260059CE50 /* TestED */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = TestED; sourceTree = BUILT_PRODUCTS_DIR; };
 		04D8B5D819673E260059CE50 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		04D8B5DA19673E260059CE50 /* TestED.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = TestED.1; sourceTree = "<group>"; };
@@ -46,6 +50,8 @@
 		04D8B5E5196741060059CE50 /* BehaviorObjVector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BehaviorObjVector.h; sourceTree = "<group>"; };
 		04D8B5ED196752720059CE50 /* BehaviorEditDistance.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BehaviorEditDistance.cpp; sourceTree = "<group>"; };
 		04D8B5EE196752720059CE50 /* BehaviorEditDistance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BehaviorEditDistance.h; sourceTree = "<group>"; };
+		04E06CAE198B3E2E00BA68B4 /* EditDistanceStatus.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = EditDistanceStatus.cpp; sourceTree = "<group>"; };
+		04E06CAF198B3E2E00BA68B4 /* EditDistanceStatus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditDistanceStatus.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +98,10 @@
 				04C35A7B196F41DC009AACB9 /* MyEditDistance.h */,
 				049109A1197ECAED00DA0C3E /* MultiDimensionArray.cpp */,
 				049109A2197ECAED00DA0C3E /* MultiDimensionArray.h */,
+				04CB7E991984736000948A75 /* MultiStringEditDistance.cpp */,
+				04CB7E9A1984736000948A75 /* MultiStringEditDistance.h */,
+				04E06CAE198B3E2E00BA68B4 /* EditDistanceStatus.cpp */,
+				04E06CAF198B3E2E00BA68B4 /* EditDistanceStatus.h */,
 			);
 			path = TestED;
 			sourceTree = "<group>";
@@ -154,6 +164,8 @@
 				04C35A7C196F41DC009AACB9 /* MyEditDistance.cpp in Sources */,
 				04D8B5EF196752720059CE50 /* BehaviorEditDistance.cpp in Sources */,
 				04D8B5E319673E490059CE50 /* BehaviorObj.cpp in Sources */,
+				04E06CB0198B3E2E00BA68B4 /* EditDistanceStatus.cpp in Sources */,
+				04CB7E9B1984736000948A75 /* MultiStringEditDistance.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
