@@ -87,8 +87,14 @@ void MultiStringEditDistance::generateEditDistanceMatrix()
         vector<long> preStepLocs;
         getPreStepLocs(preStepLocs,pairs,currentStep,_lenProdArray);
         vector<long> preStepLoc;
-        MinPreStep(_editDistanceMatrix, preStepLocs, currentStep, _lenProdArray, currentStepChrs, minLoc);
-        EditDistanceStatus currentStatus=EditDistanceStatus(minLoc[1], pairs, currentStepChrs, minLoc[0]);
+        
+        list<long> usedIndexesForMin;
+        list<long> unUsedIndexesForMin;
+        list<list<long> > usedIndexesPairs;
+       
+        MinPreStep(_editDistanceMatrix, preStepLocs, currentStep, _lenProdArray, currentStepChrs, minLoc,usedIndexesForMin,unUsedIndexesForMin);
+        findUsedIndexesPairs(currentStepChrs, usedIndexesPairs, usedIndexesForMin);
+        EditDistanceStatus currentStatus=EditDistanceStatus(minLoc[1], pairs,usedIndexesPairs, unUsedIndexesForMin, currentStepChrs, minLoc[0]);
         _editDistanceMatrix[currentLoc]= currentStatus;
     }
 }
@@ -100,20 +106,31 @@ void MultiStringEditDistance::backTrace()
     while(preStep!=-1)
     {
         vector<BehaviorObj> currentStepChrs=_editDistanceMatrix[currentStep].getCurrentStepChrs();
-        list< list<long> > currentPairs=_editDistanceMatrix[currentStep].getPairs();
+        list< list<long> > currentUsedIndexesPairs=_editDistanceMatrix[currentStep].getUsedIndexesPairs();
+        list<long> currentUnUsedIndexes=_editDistanceMatrix[currentStep].getUnUsedIndexes();
         bool containZero=false;
-        for(int i=0; i<currentStepChrs.size();i++)
-        {
-            if(currentStepChrs[i].getBehaviorName()=="0")
-                containZero=true;
-        }
-        long numInsertChars=currentPairs.size()-(containZero?1:0);
-        long insertLoc=0;
-        bool isInsertChar=false;
         list< list<long> >::iterator iterA;
         list<long>::iterator iterB;
-
-        for(iterA= currentPairs.begin(); iterA!= currentPairs.end(); iterA++)
+        
+        for(iterA= currentUsedIndexesPairs.begin(); iterA != currentUsedIndexesPairs.end();iterA++)
+        {
+            for(iterB= (*iterA).begin(); iterB!= (*iterA).end();iterB++)
+            {
+                if(currentStepChrs[(*iterB)].getBehaviorName()=="0")
+                    containZero=true;
+            }
+        }
+        long numInsertChars=currentUsedIndexesPairs.size()-(containZero?1:0);
+        long insertLoc=0;
+        bool isInsertChar=false;
+       
+        for(iterB= currentUnUsedIndexes.begin(); iterB!= currentUnUsedIndexes.end();iterB++)
+        {
+            long indexOfDimension= *(iterB);
+            _alignedStrings[indexOfDimension]='_'+_alignedStrings[indexOfDimension];
+        }
+        
+        for(iterA= currentUsedIndexesPairs.begin(); iterA!= currentUsedIndexesPairs.end(); iterA++)
         {
             for(iterB=(*iterA).begin(); iterB != (*iterA).end(); iterB++)
             {

@@ -7,10 +7,12 @@
 //
 
 #include "EditDistanceStatus.h"
-EditDistanceStatus::EditDistanceStatus(double valueInMatrix,list< list<long> > pairs,vector<BehaviorObj> currentStepChrs, long preStep)
+EditDistanceStatus::EditDistanceStatus(double valueInMatrix,list< list<long> > pairs,list< list<long> > usedIndexesPairs, list<long> unUsedIndexes, vector<BehaviorObj> currentStepChrs, long preStep)
 {
     _valueInMatrix=valueInMatrix;
     _pairs=pairs;
+    _unUsedIndexes=unUsedIndexes;
+    _usedIndexesPairs=usedIndexesPairs;
     _currentStepChrs=currentStepChrs;
     _preStep=preStep;
     
@@ -26,6 +28,8 @@ EditDistanceStatus & EditDistanceStatus::operator = (const EditDistanceStatus& R
     _valueInMatrix=RightSides._valueInMatrix;
     _preStep=RightSides._preStep;
     _pairs=RightSides._pairs;
+    _usedIndexesPairs=RightSides._usedIndexesPairs;
+    _unUsedIndexes=RightSides._unUsedIndexes;
     _currentStepChrs=RightSides._currentStepChrs;
 
     return *this;
@@ -42,6 +46,16 @@ double EditDistanceStatus::getValueInMatrix()
 list< list<long> > EditDistanceStatus::getPairs()
 {
     return _pairs;
+}
+
+list<list<long> > EditDistanceStatus::getUsedIndexesPairs()
+{
+    return _usedIndexesPairs;
+}
+
+list<long> EditDistanceStatus::getUnUsedIndexes()
+{
+    return _unUsedIndexes;
 }
 vector<BehaviorObj> EditDistanceStatus::getCurrentStepChrs()
 {

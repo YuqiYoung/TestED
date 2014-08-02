@@ -27,10 +27,11 @@ void getOptiPreviousStep(vector< vector<long> > &preStepVec, list< list<long> > 
 
 void getPreStepLocs(vector<long> &preStepLocs, list< list<long> > &pairs, const vector<long> indexArray,vector<long> lenProdArray);
 
-long getCostValue(const vector<long> original, const vector<long> preStep,vector<BehaviorObj> &currentStepChr);
-void MinPreStep(vector<EditDistanceStatus> dMatrix, const vector<long> &preStepLocs , const vector<long> &currentStep,const vector<long> &lenProdArray, vector<BehaviorObj> &currentStepChr, double *minLoc);//the last array in the vector preStepVec is the current step
+long getCostValue(const vector<long> original, const vector<long> preStep,vector<BehaviorObj> &currentStepChr,list<long> &usedIndexes,list<long> &unUsedIndexes);
+void MinPreStep(vector<EditDistanceStatus> dMatrix, const vector<long> &preStepLocs , const vector<long> &currentStep,const vector<long> &lenProdArray, vector<BehaviorObj> &currentStepChr, double *minLoc, list<long>  &usedIndexesForMin,  list<long> &unUsedIndexesForMin);//the last array in the vector preStepVec is the current step
 void generateVisitOrder(const vector<long> lenArray, vector< vector<long> > &visitOrder, long dimension, long start, long end);
 
+void findUsedIndexesPairs(vector<BehaviorObj> currentStepChr,list< list<long> > &usedIndexesPairs,list<long> &usedIndexes);
 void findPairs(vector<BehaviorObj> currentStepChr,list< list<long> > &pairs);
 
 list<long> findLongestPair(list< list<long> > pairs);

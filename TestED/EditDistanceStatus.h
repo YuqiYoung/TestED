@@ -20,19 +20,21 @@ class EditDistanceStatus
 private:
     double _valueInMatrix;
     list< list<long> > _pairs;
-//    list< list<long> > _usedPairs;
-//    list< list<long> > _unUsedPairs;
+    list<list<long> > _usedIndexesPairs;
+    list<long> _unUsedIndexes;
     vector<BehaviorObj> _currentStepChrs;
     long _preStep;
     
     
 public:
-    EditDistanceStatus(double valueInMatrix,list< list<long> > pairs,vector<BehaviorObj> currentStepChrs, long preStep);
+    EditDistanceStatus(double valueInMatrix,list< list<long> > pairs,list<list<long> > usedIndexesPairs,list<long> unUsedIndexes,vector<BehaviorObj> currentStepChrs, long preStep);
     EditDistanceStatus(double valueInMatrix,long preStep);
     EditDistanceStatus& operator = (const EditDistanceStatus&);
     long getPreStep();
     double getValueInMatrix();
     list< list<long> > getPairs();
+    list<list<long> > getUsedIndexesPairs();
+    list<long> getUnUsedIndexes();
     vector<BehaviorObj> getCurrentStepChrs();
     
 };

@@ -38,11 +38,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TestED/MultiDimensionArray.cpp"
-            timestampString = "428611635.80894"
+            timestampString = "428625874.821554"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "260"
-            endingLineNumber = "260"
+            startingLineNumber = "318"
+            endingLineNumber = "318"
             landmarkName = "findPairs(vector&lt;BehaviorObj&gt; currentStepChr,list&lt; list&lt;long&gt; &gt; &amp;pairs)"
             landmarkType = "7">
          </BreakpointContent>
@@ -54,11 +54,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TestED/MultiDimensionArray.cpp"
-            timestampString = "428611635.80894"
+            timestampString = "428625874.821554"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "261"
-            endingLineNumber = "261"
+            startingLineNumber = "319"
+            endingLineNumber = "319"
             landmarkName = "findPairs(vector&lt;BehaviorObj&gt; currentStepChr,list&lt; list&lt;long&gt; &gt; &amp;pairs)"
             landmarkType = "7">
          </BreakpointContent>
@@ -196,11 +196,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TestED/MultiStringEditDistance.cpp"
-            timestampString = "428608829.811294"
+            timestampString = "428625931.194002"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "90"
-            endingLineNumber = "90"
+            startingLineNumber = "95"
+            endingLineNumber = "95"
             landmarkName = "MultiStringEditDistance::generateEditDistanceMatrix()"
             landmarkType = "5">
          </BreakpointContent>
@@ -352,12 +352,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TestED/MultiDimensionArray.cpp"
-            timestampString = "428611635.80894"
+            timestampString = "428625874.821554"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "170"
-            endingLineNumber = "170"
-            landmarkName = "MinPreStep(vector&lt;EditDistanceStatus&gt; dMatrix, const vector&lt;long&gt; &amp;preStepLocs , const vector&lt;long&gt; &amp;currentStep,const vector&lt;long&gt; &amp;lenProdArray, vector&lt;BehaviorObj&gt; &amp;currentStepChr, double *minLoc)"
+            startingLineNumber = "182"
+            endingLineNumber = "182"
+            landmarkName = "MinPreStep(vector&lt;EditDistanceStatus&gt; dMatrix, const vector&lt;long&gt; &amp;preStepLocs , const vector&lt;long&gt; &amp;currentStep,const vector&lt;long&gt; &amp;lenProdArray, vector&lt;BehaviorObj&gt; &amp;currentStepChr, double *minLoc, list&lt;long&gt; &amp;usedIndexesForMin, list&lt;long&gt; &amp;unUsedIndexesForMin)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -400,11 +400,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TestED/MultiStringEditDistance.cpp"
-            timestampString = "428608829.811294"
+            timestampString = "428625931.194002"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "92"
-            endingLineNumber = "92"
+            startingLineNumber = "98"
+            endingLineNumber = "98"
             landmarkName = "MultiStringEditDistance::generateEditDistanceMatrix()"
             landmarkType = "5">
          </BreakpointContent>
@@ -416,12 +416,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TestED/MultiDimensionArray.cpp"
-            timestampString = "428611635.80894"
+            timestampString = "428625874.821554"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "167"
-            endingLineNumber = "167"
-            landmarkName = "MinPreStep(vector&lt;EditDistanceStatus&gt; dMatrix, const vector&lt;long&gt; &amp;preStepLocs , const vector&lt;long&gt; &amp;currentStep,const vector&lt;long&gt; &amp;lenProdArray, vector&lt;BehaviorObj&gt; &amp;currentStepChr, double *minLoc)"
+            startingLineNumber = "177"
+            endingLineNumber = "177"
+            landmarkName = "MinPreStep(vector&lt;EditDistanceStatus&gt; dMatrix, const vector&lt;long&gt; &amp;preStepLocs , const vector&lt;long&gt; &amp;currentStep,const vector&lt;long&gt; &amp;lenProdArray, vector&lt;BehaviorObj&gt; &amp;currentStepChr, double *minLoc, list&lt;long&gt; &amp;usedIndexesForMin, list&lt;long&gt; &amp;unUsedIndexesForMin)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -432,12 +432,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TestED/MultiDimensionArray.cpp"
-            timestampString = "428611635.80894"
+            timestampString = "428625874.821554"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "174"
-            endingLineNumber = "174"
-            landmarkName = "MinPreStep(vector&lt;EditDistanceStatus&gt; dMatrix, const vector&lt;long&gt; &amp;preStepLocs , const vector&lt;long&gt; &amp;currentStep,const vector&lt;long&gt; &amp;lenProdArray, vector&lt;BehaviorObj&gt; &amp;currentStepChr, double *minLoc)"
+            startingLineNumber = "186"
+            endingLineNumber = "186"
+            landmarkName = "MinPreStep(vector&lt;EditDistanceStatus&gt; dMatrix, const vector&lt;long&gt; &amp;preStepLocs , const vector&lt;long&gt; &amp;currentStep,const vector&lt;long&gt; &amp;lenProdArray, vector&lt;BehaviorObj&gt; &amp;currentStepChr, double *minLoc, list&lt;long&gt; &amp;usedIndexesForMin, list&lt;long&gt; &amp;unUsedIndexesForMin)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -448,12 +448,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TestED/MultiDimensionArray.cpp"
-            timestampString = "428611635.80894"
+            timestampString = "428625874.821554"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "183"
-            endingLineNumber = "183"
-            landmarkName = "MinPreStep(vector&lt;EditDistanceStatus&gt; dMatrix, const vector&lt;long&gt; &amp;preStepLocs , const vector&lt;long&gt; &amp;currentStep,const vector&lt;long&gt; &amp;lenProdArray, vector&lt;BehaviorObj&gt; &amp;currentStepChr, double *minLoc)"
+            startingLineNumber = "197"
+            endingLineNumber = "197"
+            landmarkName = "MinPreStep(vector&lt;EditDistanceStatus&gt; dMatrix, const vector&lt;long&gt; &amp;preStepLocs , const vector&lt;long&gt; &amp;currentStep,const vector&lt;long&gt; &amp;lenProdArray, vector&lt;BehaviorObj&gt; &amp;currentStepChr, double *minLoc, list&lt;long&gt; &amp;usedIndexesForMin, list&lt;long&gt; &amp;unUsedIndexesForMin)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -464,12 +464,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TestED/MultiDimensionArray.cpp"
-            timestampString = "428611635.80894"
+            timestampString = "428625874.821554"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "149"
-            endingLineNumber = "149"
-            landmarkName = "getCostValue(const vector&lt;long&gt; original, const vector&lt;long&gt; preStep,vector&lt;BehaviorObj&gt; &amp;currentStepChr)"
+            startingLineNumber = "151"
+            endingLineNumber = "151"
+            landmarkName = "getCostValue(const vector&lt;long&gt; original, const vector&lt;long&gt; preStep,vector&lt;BehaviorObj&gt; &amp;currentStepChr,list&lt;long&gt; &amp;usedIndexes,list&lt;long&gt; &amp;unUsedIndexes)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -480,12 +480,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TestED/MultiDimensionArray.cpp"
-            timestampString = "428611635.80894"
+            timestampString = "428625874.821554"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "154"
-            endingLineNumber = "154"
-            landmarkName = "getCostValue(const vector&lt;long&gt; original, const vector&lt;long&gt; preStep,vector&lt;BehaviorObj&gt; &amp;currentStepChr)"
+            startingLineNumber = "163"
+            endingLineNumber = "163"
+            landmarkName = "getCostValue(const vector&lt;long&gt; original, const vector&lt;long&gt; preStep,vector&lt;BehaviorObj&gt; &amp;currentStepChr,list&lt;long&gt; &amp;usedIndexes,list&lt;long&gt; &amp;unUsedIndexes)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -508,29 +508,29 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TestED/MultiStringEditDistance.cpp"
-            timestampString = "428608829.811294"
+            timestampString = "428625931.194002"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "96"
-            endingLineNumber = "96">
+            startingLineNumber = "102"
+            endingLineNumber = "102">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TestED/MultiStringEditDistance.cpp"
-            timestampString = "428608829.811294"
+            timestampString = "428627825.707499"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "116"
-            endingLineNumber = "116"
+            startingLineNumber = "133"
+            endingLineNumber = "133"
             landmarkName = "MultiStringEditDistance::backTrace()"
             landmarkType = "5">
          </BreakpointContent>
@@ -542,11 +542,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TestED/MultiStringEditDistance.cpp"
-            timestampString = "428608829.811294"
+            timestampString = "428627825.707499"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "121"
-            endingLineNumber = "121"
+            startingLineNumber = "138"
+            endingLineNumber = "138"
             landmarkName = "MultiStringEditDistance::backTrace()"
             landmarkType = "5">
          </BreakpointContent>
@@ -558,11 +558,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TestED/MultiStringEditDistance.cpp"
-            timestampString = "428608829.811294"
+            timestampString = "428627825.707499"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "120"
-            endingLineNumber = "120"
+            startingLineNumber = "137"
+            endingLineNumber = "137"
             landmarkName = "MultiStringEditDistance::backTrace()"
             landmarkType = "5">
          </BreakpointContent>
@@ -570,15 +570,15 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TestED/MultiStringEditDistance.cpp"
-            timestampString = "428608829.811294"
+            timestampString = "428627825.707499"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "122"
-            endingLineNumber = "122"
+            startingLineNumber = "139"
+            endingLineNumber = "139"
             landmarkName = "MultiStringEditDistance::backTrace()"
             landmarkType = "5">
          </BreakpointContent>
@@ -586,15 +586,15 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TestED/MultiStringEditDistance.cpp"
-            timestampString = "428608829.811294"
+            timestampString = "428627825.707499"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "129"
-            endingLineNumber = "129"
+            startingLineNumber = "146"
+            endingLineNumber = "146"
             landmarkName = "MultiStringEditDistance::backTrace()"
             landmarkType = "5">
          </BreakpointContent>
@@ -602,15 +602,15 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TestED/MultiStringEditDistance.cpp"
-            timestampString = "428608829.811294"
+            timestampString = "428627825.707499"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "148"
-            endingLineNumber = "148"
+            startingLineNumber = "165"
+            endingLineNumber = "165"
             landmarkName = "MultiStringEditDistance::backTrace()"
             landmarkType = "5">
          </BreakpointContent>
@@ -638,11 +638,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TestED/MultiStringEditDistance.cpp"
-            timestampString = "428609001.696181"
+            timestampString = "428627825.707499"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "158"
-            endingLineNumber = "158"
+            startingLineNumber = "175"
+            endingLineNumber = "175"
             landmarkName = "MultiStringEditDistance::printAlignedStrings()"
             landmarkType = "5">
          </BreakpointContent>
@@ -650,49 +650,249 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TestED/MultiStringEditDistance.cpp"
-            timestampString = "428609177.183275"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "99"
-            endingLineNumber = "99"
-            landmarkName = "MultiStringEditDistance::backTrace()"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "TestED/MultiStringEditDistance.cpp"
-            timestampString = "428609179.823393"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "102"
-            endingLineNumber = "102"
-            landmarkName = "MultiStringEditDistance::backTrace()"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "TestED/MultiStringEditDistance.cpp"
-            timestampString = "428609182.253875"
+            timestampString = "428625931.194002"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "105"
             endingLineNumber = "105"
             landmarkName = "MultiStringEditDistance::backTrace()"
             landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TestED/MultiStringEditDistance.cpp"
+            timestampString = "428625931.194002"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "108"
+            endingLineNumber = "108"
+            landmarkName = "MultiStringEditDistance::backTrace()"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TestED/MultiStringEditDistance.cpp"
+            timestampString = "428627825.707499"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "113"
+            endingLineNumber = "113"
+            landmarkName = "MultiStringEditDistance::backTrace()"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TestED/MultiDimensionArray.cpp"
+            timestampString = "428626370.992497"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "257"
+            endingLineNumber = "257">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TestED/MultiDimensionArray.cpp"
+            timestampString = "428626374.379597"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "270"
+            endingLineNumber = "270"
+            landmarkName = "findUsedIndexesPairs(vector&lt;BehaviorObj&gt; currentStepChr,list&lt; list&lt;long&gt; &gt; &amp;usedIndexesPairs,list&lt;long&gt; &amp;usedIndexes)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TestED/MultiDimensionArray.cpp"
+            timestampString = "428626375.315555"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "284"
+            endingLineNumber = "284"
+            landmarkName = "findUsedIndexesPairs(vector&lt;BehaviorObj&gt; currentStepChr,list&lt; list&lt;long&gt; &gt; &amp;usedIndexesPairs,list&lt;long&gt; &amp;usedIndexes)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TestED/MultiDimensionArray.cpp"
+            timestampString = "428626499.925489"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "174"
+            endingLineNumber = "174">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TestED/MultiDimensionArray.cpp"
+            timestampString = "428626504.089702"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "176"
+            endingLineNumber = "176"
+            landmarkName = "MinPreStep(vector&lt;EditDistanceStatus&gt; dMatrix, const vector&lt;long&gt; &amp;preStepLocs , const vector&lt;long&gt; &amp;currentStep,const vector&lt;long&gt; &amp;lenProdArray, vector&lt;BehaviorObj&gt; &amp;currentStepChr, double *minLoc, list&lt;long&gt; &amp;usedIndexesForMin, list&lt;long&gt; &amp;unUsedIndexesForMin)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TestED/MultiStringEditDistance.cpp"
+            timestampString = "428626699.803849"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "96"
+            endingLineNumber = "96"
+            landmarkName = "MultiStringEditDistance::generateEditDistanceMatrix()"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TestED/MultiDimensionArray.cpp"
+            timestampString = "428626770.649782"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "157"
+            endingLineNumber = "157"
+            landmarkName = "getCostValue(const vector&lt;long&gt; original, const vector&lt;long&gt; preStep,vector&lt;BehaviorObj&gt; &amp;currentStepChr,list&lt;long&gt; &amp;usedIndexes,list&lt;long&gt; &amp;unUsedIndexes)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TestED/MultiDimensionArray.cpp"
+            timestampString = "428626771.687005"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "161"
+            endingLineNumber = "161"
+            landmarkName = "getCostValue(const vector&lt;long&gt; original, const vector&lt;long&gt; preStep,vector&lt;BehaviorObj&gt; &amp;currentStepChr,list&lt;long&gt; &amp;usedIndexes,list&lt;long&gt; &amp;unUsedIndexes)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TestED/MultiStringEditDistance.cpp"
+            timestampString = "428627212.245012"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "44"
+            endingLineNumber = "44"
+            landmarkName = "MultiStringEditDistance::MultiStringEditDistance(vector&lt;BehaviorObjVector&gt; source)"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MultiStringEditDistance::MultiStringEditDistance(std::__1::vector&lt;BehaviorObjVector, std::__1::allocator&lt;BehaviorObjVector&gt; &gt;)"
+                  moduleName = "TestED"
+                  urlString = "file:///Users/mac/Documents/Summer%20Session/TestED/TestED/MultiStringEditDistance.cpp"
+                  timestampString = "428627214.531775"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "45"
+                  endingLineNumber = "45"
+                  offsetFromSymbolStart = "16">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MultiStringEditDistance::MultiStringEditDistance(std::__1::vector&lt;BehaviorObjVector, std::__1::allocator&lt;BehaviorObjVector&gt; &gt;)"
+                  moduleName = "TestED"
+                  urlString = "file:///Users/mac/Documents/Summer%20Session/TestED/TestED/MultiStringEditDistance.cpp"
+                  timestampString = "428627214.53198"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "45"
+                  endingLineNumber = "45"
+                  offsetFromSymbolStart = "2298">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MultiStringEditDistance::MultiStringEditDistance(std::__1::vector&lt;BehaviorObjVector, std::__1::allocator&lt;BehaviorObjVector&gt; &gt;)"
+                  moduleName = "TestED"
+                  urlString = "file:///Users/mac/Documents/Summer%20Session/TestED/TestED/MultiStringEditDistance.cpp"
+                  timestampString = "428627214.532136"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "45"
+                  endingLineNumber = "45"
+                  offsetFromSymbolStart = "4070">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TestED/MultiDimensionArray.cpp"
+            timestampString = "428627246.105366"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "269"
+            endingLineNumber = "269"
+            landmarkName = "findUsedIndexesPairs(vector&lt;BehaviorObj&gt; currentStepChr,list&lt; list&lt;long&gt; &gt; &amp;usedIndexesPairs,list&lt;long&gt; &amp;usedIndexes)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

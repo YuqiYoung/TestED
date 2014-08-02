@@ -143,14 +143,23 @@ void getPreStepLocs(vector<long> &preStepLocs, list< list<long> > &pairs, const 
     }
 
 }
-long getCostValue(const vector<long> original, const vector<long> preStep,vector<BehaviorObj> &currentStepChr)
+long getCostValue(const vector<long> original, const vector<long> preStep,vector<BehaviorObj> &currentStepChr,list<long> &usedIndexes,list<long> &unUsedIndexes)
 {
+    unUsedIndexes.clear();
+    usedIndexes.clear();
     int cost=0;
     for(int i=0;i<original.size();i++)
     {
         //eg. original: (x+1 , y+1, z+1), preStep: (x, y+1, z) then the cost = 1
         if((original[i] - preStep[i])==0)
+        {
             cost++;
+            unUsedIndexes.push_back(i);
+        }
+        else
+        {
+            usedIndexes.push_back(i);
+        }
     }
     
     // original: (x+1 , y+1, z+1), preStep: (x, y, z) diagonal situation
@@ -162,30 +171,30 @@ long getCostValue(const vector<long> original, const vector<long> preStep,vector
 }
 
 //minloc[0]= minIndex, minloc[1]= minValue
-void MinPreStep(vector<EditDistanceStatus> dMatrix, const vector<long> &preStepLocs , const vector<long> &currentStep,const vector<long> &lenProdArray, vector<BehaviorObj> &currentStepChr, double *minLoc)
+void MinPreStep(vector<EditDistanceStatus> dMatrix, const vector<long> &preStepLocs , const vector<long> &currentStep,const vector<long> &lenProdArray, vector<BehaviorObj> &currentStepChr, double *minLoc, list<long>  &usedIndexesForMin,  list<long> &unUsedIndexesForMin)
 {
     vector<long> preStep(currentStep.size());
+    list<long>  usedIndexes;
+    list<long> unUsedIndexes;
+    
     minLoc[0]=preStepLocs[1];//preStepLocs[0] is the current step location
     getIndexArray(lenProdArray, preStep, minLoc[0]);
     double base= dMatrix[minLoc[0]].getValueInMatrix();
-    long cost= getCostValue(currentStep, preStep, currentStepChr);
+    long cost= getCostValue(currentStep, preStep, currentStepChr,usedIndexesForMin,unUsedIndexesForMin);
     minLoc[1]= base+ cost;
     
     for(int i=2;i<preStepLocs.size();i++)
     {
         getIndexArray(lenProdArray, preStep, preStepLocs[i]);
-        double temp= dMatrix[preStepLocs[i]].getValueInMatrix() + getCostValue(currentStep, preStep, currentStepChr);
+        double temp= dMatrix[preStepLocs[i]].getValueInMatrix() + getCostValue(currentStep, preStep, currentStepChr,usedIndexes,unUsedIndexes);
         if(temp < minLoc[1])
         {
             minLoc[0]=preStepLocs[i];
             minLoc[1]=temp;
+            usedIndexesForMin=usedIndexes;
+            unUsedIndexesForMin=unUsedIndexes;
         }
     }
-
-
-
-
-
 
 //
 //    //vector<long> current= preStepVec[preStepVec.size()-1];
@@ -243,6 +252,55 @@ void generateVisitOrder(const vector<long> lenArray, vector< vector<long> > &vis
             visitOrder[j][dimension-1]=i;
         generateVisitOrder(lenArray, visitOrder, dimension-1, newStart, newEnd);
     }
+}
+
+void findUsedIndexesPairs(vector<BehaviorObj> currentStepChr,list< list<long> > &usedIndexesPairs,list<long> &usedIndexes)
+{
+    vector<int> isVisited = vector<int>(usedIndexes.size());
+    vector<long> indexVector= vector<long>(usedIndexes.size());
+    vector<long> skipList= vector<long>(usedIndexes.size());
+    int index=0;
+    for(list<long>::iterator iter=usedIndexes.begin(); iter!= usedIndexes.end(); iter++)
+    {
+        indexVector[index]=*iter;
+        index++;
+    }
+    
+    skipList[0]=0;
+    for(int i=1; i<skipList.size(); i++)
+    {
+        string opt= currentStepChr[indexVector[i]].getBehaviorName();
+        skipList[i]=i;
+        for(int j=i-1; j >=0; j--)
+        {
+            if(opt==currentStepChr[indexVector[j]].getBehaviorName())
+            {
+                skipList[i]=j;
+                break;
+            }
+        }
+    }
+    
+    for(int i=int(usedIndexes.size())-1;i >= 0;i--)
+    {
+        if(isVisited[i]==0)
+        {
+            list<long> onePair;
+            long currentVisit=i;
+            long nextVisit= skipList[i];
+            onePair.push_front(indexVector[i]);
+            isVisited[currentVisit]=1;
+            while(nextVisit!=currentVisit)
+            {
+                currentVisit=nextVisit;
+                isVisited[currentVisit]=1;
+                onePair.push_front(indexVector[currentVisit]);
+                nextVisit=skipList[currentVisit];
+            }
+            usedIndexesPairs.push_front(onePair);
+        }
+    }
+
 }
 
 void findPairs(vector<BehaviorObj> currentStepChr,list< list<long> > &pairs)
