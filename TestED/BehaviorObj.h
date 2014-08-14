@@ -11,11 +11,12 @@
 
 #include <iostream>
 using namespace std;
+//behavior object
 class BehaviorObj
 {
 private:
     string _behaviorName;//some operation names such as write, read and so on
-    string _targetFileName;//the target file name of this operation
+    string _targetFileName;//the target file name of this operation，eg. file1.txt
     
 public:
     BehaviorObj(const string bn, const string tFN);

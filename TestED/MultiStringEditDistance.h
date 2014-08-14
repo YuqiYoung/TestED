@@ -18,13 +18,13 @@
 class MultiStringEditDistance
 {
 private:
-    vector<BehaviorObjVector> _source;
-    vector<long> _lenArray;
-    vector<long> _lenProdArray;//save the size of each dimension
-    vector< vector<long> > _visitOrder;
+    vector<BehaviorObjVector> _source;//original strings
+    vector<long> _lenArray;//{1,the length of each original string}
+    vector<long> _lenProdArray;//the size of each dimension
+    vector< EditDistanceStatus > _editDistanceMatrix;
+    vector< vector<long> > _visitOrder;//the order of the element will be visited in editDistanceMatrix
     string *_alignedStrings;
     //vector< double > _editDistanceMatrix;
-    vector< EditDistanceStatus > _editDistanceMatrix;
     
 public:
     MultiStringEditDistance(vector<BehaviorObjVector> source);

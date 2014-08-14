@@ -15,15 +15,27 @@
 #include "BehaviorObj.h"
 using namespace std;
 
+//the infomation of the status(step) which we will use
 class EditDistanceStatus
 {
 private:
-    double _valueInMatrix;
+    double _valueInMatrix; //current weight value in this step
     list< list<long> > _pairs;
-    list<list<long> > _usedIndexesPairs;
+    vector<BehaviorObj> _currentStepChrs;//the chars of each string in current step
+    long _preStep;//the location of previous step
+    
+    /*
+     e.g.
+     For 3D case:
+        1.{x+1,y,z} -> {x+1.y+1,z+1}
+            usedIndexes: y,z
+            unUsedIndexes: x
+        2.{x,y,z} -> {x+1.y+1,z+1}
+            usedIndexes: x,y,z
+            unUsedIndexes: null
+    */
+    list<list<long> > _usedIndexesPairs;//combine the same content of indexes which we used in the same pair.
     list<long> _unUsedIndexes;
-    vector<BehaviorObj> _currentStepChrs;
-    long _preStep;
     
     
 public:

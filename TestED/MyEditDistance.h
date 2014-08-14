@@ -24,8 +24,8 @@ class MyEditDistance
 private:
     BehaviorObjVector _s1;
     BehaviorObjVector _s2;
-    list<BehaviorObj> _rS1;//inserSpace version of S1
-    list<BehaviorObj> _rS2;////inserSpace version of S2
+    list<BehaviorObj> _rS1;//insertSpace version of S1
+    list<BehaviorObj> _rS2;//insertSpace version of S2
     
     vector<vector <float> > _d; //edit distance matrix
     vector<vector <float> > _opt; //edit distance state transition matrix

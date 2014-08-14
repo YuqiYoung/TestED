@@ -19,7 +19,7 @@ private:
 public:
     BehaviorObjVector();
     size_t size();
-    BehaviorObj& getIndex(int index);
+    BehaviorObj& getIndex(int index);//return the index_th behaviorObj in behaviorVector
     void addBehaviorObj(BehaviorObj bo);
     vector<string> getBehaviorVector();
     vector<string> getTargetFileNameVector();

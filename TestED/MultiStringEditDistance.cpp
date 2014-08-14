@@ -14,22 +14,26 @@ MultiStringEditDistance::MultiStringEditDistance(vector<BehaviorObjVector> sourc
     _source=source;
     long length=source.size();
     _alignedStrings= new string[length];
+    
     _lenArray= vector<long>(source.size()+1);
-    _lenArray[0]=1;
+    _lenArray[0]=1;//{1,.....}
     for(int i=0; i!=source.size(); i++)
     {
-        _lenArray[i+1]=source[i].size()+1;//add 0 at the begining of strings
+        _lenArray[i+1]=source[i].size()+1;//add 0 at the begining of each strings
     }
     
     _lenProdArray=vector<long> (_lenArray.size());
     genLenProdArray(_lenProdArray, _lenArray, _lenArray.size());
     
     _editDistanceMatrix= vector< EditDistanceStatus >(_lenProdArray[_lenProdArray.size()-1],EditDistanceStatus(0,-1));
+    
     _visitOrder= vector< vector<long> > (_lenProdArray[_lenProdArray.size()-1], vector<long>(source.size()));
     long end=_lenProdArray[_lenProdArray.size()-1]-1;
     long dimension=source.size();
     generateVisitOrder(_lenArray, _visitOrder, dimension, 0, end);
     
+/* 
+   //output VisitOrder
     for(long i=0; i < _visitOrder.size(); i++)
     {
         cout<<i<<":";
@@ -39,7 +43,7 @@ MultiStringEditDistance::MultiStringEditDistance(vector<BehaviorObjVector> sourc
         }
         cout<<endl;
     }
-
+*/
     generateEditDistanceMatrix();
     backTrace();
 }
@@ -49,7 +53,6 @@ Method: getCurrentStepChr
 Aim: Get the current char element for each dimension
 vector<long> indexArray: refer to the current location
 vector<BehaviorObj> &stepChrs: result
- 
 */
 void MultiStringEditDistance::getCurrentStepChr(vector<long> indexArray, vector<BehaviorObj> &stepChrs)
 {
@@ -71,22 +74,20 @@ void MultiStringEditDistance::getCurrentStepChr(vector<long> indexArray, vector<
 
 void MultiStringEditDistance::generateEditDistanceMatrix()
 {
-    //EditDistanceStatus init= EditDistanceStatus(0,-1);
-    //_editDistanceMatrix[0]=init;
-   
     for (long i=1; i<_visitOrder.size(); i++)
     {
         vector<long> currentStep= _visitOrder[i];
-        double minLoc[2]={0,0};//minloc[0]= minIndex, minloc[1]= minValue
+        double minLoc[2]={0,0};//minloc[0] denote minIndex, minloc[1]denote minValue
         long currentLoc= getLocation(_lenProdArray, currentStep);
         
         vector<BehaviorObj> currentStepChrs;
         getCurrentStepChr(currentStep,currentStepChrs);
+        
         list< list<long> > pairs;
         findPairs(currentStepChrs,pairs);
+        
         vector<long> preStepLocs;
         getPreStepLocs(preStepLocs,pairs,currentStep,_lenProdArray);
-        vector<long> preStepLoc;
         
         list<long> usedIndexesForMin;
         list<long> unUsedIndexesForMin;
@@ -127,7 +128,8 @@ void MultiStringEditDistance::backTrace()
         for(iterB= currentUnUsedIndexes.begin(); iterB!= currentUnUsedIndexes.end();iterB++)
         {
             long indexOfDimension= *(iterB);
-            _alignedStrings[indexOfDimension]='_'+_alignedStrings[indexOfDimension];
+            for(int i=0;i<numInsertChars;i++)
+                _alignedStrings[indexOfDimension]='_'+_alignedStrings[indexOfDimension];
         }
         
         for(iterA= currentUsedIndexesPairs.begin(); iterA!= currentUsedIndexesPairs.end(); iterA++)
