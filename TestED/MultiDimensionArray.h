@@ -145,7 +145,7 @@ void generateVisitOrder(const vector<long> lenArray, vector< vector<long> > &vis
         usedIndexesPairs:{1,3},{2}
         usedIndexesChars:{W,W},{R}
 */
-void findUsedIndexesPairs(vector<BehaviorObj> currentStepChr,list< list<long> > &usedIndexesPairs,list<long> &usedIndexes);
+void findUsedIndexesPairs(vector<BehaviorObj> currentStepChr,list< list<long> > &usedIndexesPairs,list<long> &unUsedIndexes);
 
 /*
  Method: findPairs

@@ -143,7 +143,7 @@ void test2()
 //test function "generateVisitOrder"
 void test3()
 {
-    vector<long> lenArray={1,6,6};
+    vector<long> lenArray={1,2,3,4};
     long length=lenArray.size();
     vector<long> lenProdArray=vector<long> (length);
     vector<long> indexArray=vector<long>(length-1);
@@ -168,27 +168,28 @@ void test3()
 
 int main(int argc, const char * argv[])
 {
-    // test multiStringEditDistance Algorithm
+   // test multiStringEditDistance Algorithm
     BehaviorObj w=BehaviorObj("W","a");
     BehaviorObj r=BehaviorObj("R","b");
     BehaviorObjVector s1;//generate s1
-    s1.addBehaviorObj(w);
+    s1.addBehaviorObj(r);
+    s1.addBehaviorObj(r);
     s1.addBehaviorObj(w);
     
     BehaviorObjVector s2;//generate s2
     s2.addBehaviorObj(w);
     s2.addBehaviorObj(w);
     s2.addBehaviorObj(r);
-    s2.addBehaviorObj(w);
-    s2.addBehaviorObj(r);
-    s2.addBehaviorObj(r);
+    //s2.addBehaviorObj(w);
+    //s2.addBehaviorObj(r);
+    //s2.addBehaviorObj(r);
     
     BehaviorObjVector s3;//generate s3
-    s3.addBehaviorObj(r);
+    //s3.addBehaviorObj(r);
+    //s3.addBehaviorObj(w);
     s3.addBehaviorObj(w);
-    s3.addBehaviorObj(w);
     s3.addBehaviorObj(r);
-    s3.addBehaviorObj(r);
+    //s3.addBehaviorObj(r);
 
     BehaviorObjVector s4;//generate s4
     s4.addBehaviorObj(r);
@@ -200,11 +201,10 @@ int main(int argc, const char * argv[])
     source.push_back(s1);
     source.push_back(s2);
     source.push_back(s3);
-    source.push_back(s4);
+    //source.push_back(s4);
     
     MultiStringEditDistance myED=MultiStringEditDistance(source);
     myED.printAlignedStrings();
-
     return 0;
 }
 

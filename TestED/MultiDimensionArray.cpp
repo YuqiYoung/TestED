@@ -254,13 +254,13 @@ void generateVisitOrder(const vector<long> lenArray, vector< vector<long> > &vis
     }
 }
 
-void findUsedIndexesPairs(vector<BehaviorObj> currentStepChr,list< list<long> > &usedIndexesPairs,list<long> &usedIndexes)
+void findUsedIndexesPairs(vector<BehaviorObj> currentStepChr,list< list<long> > &usedIndexesPairs,list<long> &unUsedIndexes)
 {
-    vector<int> isVisited = vector<int>(usedIndexes.size());
-    vector<long> indexVector= vector<long>(usedIndexes.size());
-    vector<long> skipList= vector<long>(usedIndexes.size());
+    vector<int> isVisited = vector<int>(unUsedIndexes.size());
+    vector<long> indexVector= vector<long>(unUsedIndexes.size());
+    vector<long> skipList= vector<long>(unUsedIndexes.size());
     int index=0;
-    for(list<long>::iterator iter=usedIndexes.begin(); iter!= usedIndexes.end(); iter++)
+    for(list<long>::iterator iter=unUsedIndexes.begin(); iter!= unUsedIndexes.end(); iter++)
     {
         indexVector[index]=*iter;
         index++;
@@ -281,7 +281,7 @@ void findUsedIndexesPairs(vector<BehaviorObj> currentStepChr,list< list<long> > 
         }
     }
     
-    for(int i=int(usedIndexes.size())-1;i >= 0;i--)
+    for(int i=int(unUsedIndexes.size())-1;i >= 0;i--)
     {
         if(isVisited[i]==0)
         {

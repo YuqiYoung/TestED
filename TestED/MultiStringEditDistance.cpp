@@ -7,6 +7,7 @@
 //
 
 #include "MultiStringEditDistance.h"
+#define useTargetFilename 1;//when the operations are the same, calculate the edit distance of their 
 
 MultiStringEditDistance::MultiStringEditDistance(vector<BehaviorObjVector> source)
 {
@@ -32,7 +33,7 @@ MultiStringEditDistance::MultiStringEditDistance(vector<BehaviorObjVector> sourc
     long dimension=source.size();
     generateVisitOrder(_lenArray, _visitOrder, dimension, 0, end);
     
-/* 
+ 
    //output VisitOrder
     for(long i=0; i < _visitOrder.size(); i++)
     {
@@ -43,7 +44,7 @@ MultiStringEditDistance::MultiStringEditDistance(vector<BehaviorObjVector> sourc
         }
         cout<<endl;
     }
-*/
+
     generateEditDistanceMatrix();
     backTrace();
 }
@@ -92,6 +93,10 @@ void MultiStringEditDistance::generateEditDistanceMatrix()
         list<long> usedIndexesForMin;
         list<long> unUsedIndexesForMin;
         list<list<long> > usedIndexesPairs;
+        //list<long> unUsedIndexes;
+        
+        //findUsedIndexesPairs(currentStepChrs, usedIndexesPairs,unUsedIndexes);
+        //getOptiPreviousStep(preStep, usedIndexesPairs, currentStep);
        
         MinPreStep(_editDistanceMatrix, preStepLocs, currentStep, _lenProdArray, currentStepChrs, minLoc,usedIndexesForMin,unUsedIndexesForMin);
         findUsedIndexesPairs(currentStepChrs, usedIndexesPairs, usedIndexesForMin);
